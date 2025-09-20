@@ -1,0 +1,252 @@
+:root {
+  --bg-color: #f9f6f2;
+  --text-color: #1c1c1c;
+  --accent-color: #000;
+  --secondary-color: #7d4ab0;
+  --transition: 0.3s ease;
+}
+
+[data-theme="dark"] {
+  --bg-color: #181818;
+  --text-color: #f1f1f1;
+  --accent-color: #90caf9;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: background var(--transition), color var(--transition);
+}
+
+/* Header */
+.header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #fff;
+}
+
+nav ul {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-right: 25px;
+  justify-content: right;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 1rem;
+  transition: color var(--transition);
+}
+
+nav a:hover {
+  color: var(--secondary-color);
+}
+
+.auth {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.btn {
+  border: none;
+  padding: 0.6rem 1.5rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: transform var(--transition), background var(--transition);
+}
+
+.signup {
+  background: var(--text-color);
+  color: #fff;
+}
+
+.signup:hover {
+  transform: scale(1.05);
+  background: var(--secondary-color);
+}
+
+.login {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+/* Hero Section */
+.hero {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  align-items: center;
+  gap: 2rem;
+  padding: 4rem 2rem;
+}
+
+.sub-title {
+  font-family: "Georgia", serif;
+  font-style: italic;
+  color: #a45a2a;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+.main-title {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  background: linear-gradient(90deg, #ff8a00, #e52e71);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0.5rem 0;
+}
+
+.hero-text p {
+  margin-bottom: 1.5rem;
+  font-size: clamp(1rem, 2vw, 1.25rem);
+}
+
+.start {
+  background: #000;
+  color: #fff;
+  border-radius: 50px;
+  height: 50px;
+  width: 100px;
+}
+
+.start:hover {
+  transform: scale(1.05);
+  background: var(--secondary-color);
+}
+
+.hero-images {
+  position: relative;
+  display: grid;
+  justify-items: center;
+}
+
+.stone {
+  margin-top: 100px;
+  margin-right: 200px;
+  width: 150px;
+  position: absolute;
+  top: -20px;
+  right: 20%;
+}
+
+.hand {
+  margin-left: 300px;
+  width: 350px;
+}
+
+/* NFT Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  
+}
+
+.card {
+  background: #fff;
+  border-radius: 15px;
+  text-align: center;
+  padding: 1.5rem;
+  transition: transform var(--transition), box-shadow var(--transition);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.card img {
+  width: 100px;
+  margin-bottom: 1rem;
+}
+
+.price {
+  font-weight: bold;
+  color: var(--secondary-color);
+}
+
+/* Barcode */
+.barcode-section {
+  
+  display: grid;
+  /* justify-items: center; */
+  padding: 2rem;
+}
+
+.barcode-section img {
+  width: clamp(200px, 50%, 400px);
+}
+
+/* Footer Nav */
+.footer-nav {
+  background: #fff;
+  padding: 1rem;
+}
+
+.footer-nav ul {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 2rem;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 0.9rem;
+}
+.footer-nav img{
+  height: 25px;
+  width: 25px;
+}
+
+/* Toggle Button */
+.toggle-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  border: 2px solid var(--secondary-color);
+  background: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+}
+
+.toggle-btn:hover,
+.toggle-btn:focus {
+  background: var(--secondary-color);
+  color: #fff;
+}
+
+/* Responsive Nav */
+@media (max-width: 768px) {
+  nav ul {
+    grid-auto-flow: row;
+    justify-items: center;
+    gap: 1rem;
+  }
+  .footer-nav ul {
+    grid-auto-flow: row;
+    gap: 0.5rem;
+  }
+}
+
+/* Toughest Class Comment */
+/* The toughest class: .hero-images
+   Positioning the stone and hand images responsively while keeping them aligned
+   across screen sizes with CSS Grid was the most challenging part. */
